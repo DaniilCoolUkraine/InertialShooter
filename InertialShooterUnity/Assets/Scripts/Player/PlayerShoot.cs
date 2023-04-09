@@ -17,7 +17,7 @@ namespace InertialShooter.Player
 
         private Camera _mainCamera;
 
-        private Vector2 _mouseClickPosition;
+        private Vector3 _mouseClickPosition;
 
         private void Awake()
         {
@@ -37,7 +37,8 @@ namespace InertialShooter.Player
             if (_canShoot)
             {
                 _mouseClickPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                _rb.AddRelativeForce(-1 * _mouseClickPosition.normalized * _recoil);
+                
+                _rb.AddForce((Vector2)(transform.position - _mouseClickPosition).normalized * _recoil, ForceMode2D.Impulse);
 
                 StartCoroutine(ShootCooldown());
             }
