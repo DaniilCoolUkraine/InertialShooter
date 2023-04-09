@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.tools": {
+      "version": "file:E:/_GameDev/CustomPackages/SetupTools",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "7.0.9",
       "depth": 1,
