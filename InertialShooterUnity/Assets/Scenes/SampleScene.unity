@@ -6512,7 +6512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2077365462
 Transform:
   m_ObjectHideFlags: 0
@@ -6558,7 +6558,9 @@ GameObject:
   - component: {fileID: 2112899414}
   - component: {fileID: 2112899415}
   - component: {fileID: 2112899416}
+  - component: {fileID: 2112899419}
   - component: {fileID: 2112899413}
+  - component: {fileID: 2112899418}
   - component: {fileID: 2112899417}
   m_Layer: 0
   m_Name: Player
@@ -6696,11 +6698,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 2112899411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c885789b5d9b4ca3a9c7187ad3fdfdc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 694655fbcec84a6ea0c394d6001cbb59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 2112899414}
+  _damagedColor: {r: 1, g: 0.52549034, b: 0.5254902, a: 1}
+  _duration: 0.5
+--- !u!114 &2112899418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112899411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23f6c3372b54a6bb53403d6b1fbca28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 5
   _dieParticles: {fileID: 8644058426937790857, guid: 3de860e4283e6f94ca6888cc2e68edbd, type: 3}
+--- !u!114 &2112899419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112899411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c12c0c612541a4864641c34d02ec48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerHealth: {fileID: 2112899418}
+  _indicator: {fileID: 2112899417}
 --- !u!1 &2125333263
 GameObject:
   m_ObjectHideFlags: 0

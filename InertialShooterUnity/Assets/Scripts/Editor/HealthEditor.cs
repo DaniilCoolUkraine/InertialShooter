@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace InertialShooter.Editor
 {
-    [CustomEditor(typeof(Health))]
+    [CustomEditor(typeof(PlayerHealth))]
     public class HealthEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
@@ -12,6 +12,11 @@ namespace InertialShooter.Editor
             base.OnInspectorGUI();
 
             Health health = (Health) target;
+            
+            if (GUILayout.Button("Damage"))
+            {
+                health.TakeDamage(1);
+            }
             
             if (GUILayout.Button("Die"))
             {
