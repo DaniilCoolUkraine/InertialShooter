@@ -23,10 +23,11 @@ namespace InertialShooter.Damageable
 
         public void Die()
         {
-            ParticleSystem particles = Instantiate(_dieParticles, transform);
+            var particles = Instantiate(_dieParticles, transform.position, Quaternion.identity);
+            particles.Play();
             
-            Destroy(particles, particles.main.duration);
-            Destroy(gameObject, particles.main.duration);
+            Destroy(particles.gameObject, particles.main.duration);
+            Destroy(gameObject);
         }
     }
 }
