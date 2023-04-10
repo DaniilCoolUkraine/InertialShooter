@@ -26,9 +26,12 @@ namespace InertialShooter.Damageable
 
         private IEnumerator ColorTintCoroutine()
         {
-            _sprite.DOColor(_damagedColor, _duration);
-            yield return new WaitForSeconds(_duration);
-            _sprite.DOColor(_defaultColor, _duration);
+            if (_sprite != null)
+            {
+                _sprite.DOColor(_damagedColor, _duration);
+                yield return new WaitForSeconds(_duration);
+                _sprite.DOColor(_defaultColor, _duration);
+            }
         }
     }
 }

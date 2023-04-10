@@ -8,6 +8,7 @@ namespace InertialShooter.Player
     public class PlayerShoot : MonoBehaviour
     {
         public event Action<Vector2> OnShoot;
+        public event Action<float> OnReload;
 
         [SerializeField] private float _cooldown;
 
@@ -51,6 +52,8 @@ namespace InertialShooter.Player
         
         private IEnumerator ShootCooldown()
         {
+            OnReload?.Invoke(_cooldown);
+            
             _canShoot = false;
             yield return new WaitForSeconds(_cooldown);
             _canShoot = true;

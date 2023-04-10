@@ -13,19 +13,24 @@ namespace InertialShooter.Player
         [SerializeField] private PlayerShoot _playerShoot;
         [SerializeField] private BulletTracer _tracer;
         [SerializeField] private PlayerDash _dash;
+        [SerializeField] private PlayerReloadIndicator _reloadIndicator;
 
         private void OnEnable()
         {
             _playerHealth.OnDamaged += _indicator.ColorTint;
+            
             _playerShoot.OnShoot += _tracer.CreateTrace;
             _playerShoot.OnShoot += _dash.Dash;
+            _playerShoot.OnReload += _reloadIndicator.OnReload;
         }
 
         private void OnDisable()
         {
             _playerHealth.OnDamaged -= _indicator.ColorTint;
+            
             _playerShoot.OnShoot -= _tracer.CreateTrace;
             _playerShoot.OnShoot -= _dash.Dash;
+            _playerShoot.OnReload -= _reloadIndicator.OnReload;
         }
     }
 }
