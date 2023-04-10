@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using InertialShooter.Damageable;
 using UnityEngine;
 
 namespace InertialShooter.Player
@@ -38,7 +39,17 @@ namespace InertialShooter.Player
             {
                 _mouseClickPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
                 
-                _rb.AddForce((Vector2)(transform.position - _mouseClickPosition).normalized * _recoil, ForceMode2D.Impulse);
+                Vector3 playerPosition = transform.position;
+                Vector2 direction = (playerPosition - _mouseClickPosition).normalized;
+                
+                RaycastHit2D hit = Physics2D.Raycast(playerPosition, -direction, 100, LayerMask.GetMask("Enemy"));
+
+                if (hit.collider != null)
+                {
+                    hit.collider.GetComponent<Health>().TakeDamage(1);
+                }
+                
+                _rb.AddForce(direction * _recoil, ForceMode2D.Impulse);
 
                 StartCoroutine(ShootCooldown());
             }
