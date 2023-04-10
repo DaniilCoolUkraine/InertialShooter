@@ -9,11 +9,8 @@ namespace InertialShooter.Player
     {
         public event Action<Vector2> OnShoot;
 
-        [SerializeField] private Rigidbody2D _rb;
-        
         [SerializeField] private float _cooldown;
-        [SerializeField] private float _recoil;
-        
+
         private bool _canShoot = true;
 
         private Camera _mainCamera;
@@ -47,8 +44,6 @@ namespace InertialShooter.Player
 
                 if (hit.collider != null)
                     hit.collider.GetComponent<Health>().TakeDamage(1);
-
-                _rb.AddForce(direction * _recoil, ForceMode2D.Impulse);
 
                 StartCoroutine(ShootCooldown());
             }

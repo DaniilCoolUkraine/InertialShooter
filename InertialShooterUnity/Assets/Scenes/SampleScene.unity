@@ -6561,6 +6561,7 @@ GameObject:
   - component: {fileID: 2112899419}
   - component: {fileID: 2112899421}
   - component: {fileID: 2112899422}
+  - component: {fileID: 2112899423}
   - component: {fileID: 2112899418}
   - component: {fileID: 2112899417}
   m_Layer: 7
@@ -6683,6 +6684,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 5
   _dieParticles: {fileID: 19889932, guid: 9dbd6578ad45ab34da731a133a3bd5f7, type: 3}
+  _rb: {fileID: 2112899420}
+  _minimumVelocity: 5
 --- !u!114 &2112899419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6699,6 +6702,7 @@ MonoBehaviour:
   _indicator: {fileID: 2112899417}
   _playerShoot: {fileID: 2112899421}
   _tracer: {fileID: 2112899422}
+  _dash: {fileID: 2112899423}
 --- !u!50 &2112899420
 Rigidbody2D:
   serializedVersion: 4
@@ -6732,9 +6736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab02a788c36741628618873656853d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 2112899420}
   _cooldown: 1
-  _recoil: 70
 --- !u!114 &2112899422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6749,6 +6751,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 2780976413663701984, guid: d7eb7850d3ba4e94c817e0356b7d8513, type: 3}
   _traceLiveTime: 1
+--- !u!114 &2112899423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112899411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4595b6d409184e25b8f77c4136f1d965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 2112899420}
+  _recoil: 70
 --- !u!1 &2125333263
 GameObject:
   m_ObjectHideFlags: 0
