@@ -7,7 +7,7 @@ namespace InertialShooter.Player
 {
     public class PlayerShoot : MonoBehaviour
     {
-        public event Action OnShoot;
+        public event Action<Vector2> OnShoot;
 
         [SerializeField] private Rigidbody2D _rb;
         
@@ -38,17 +38,16 @@ namespace InertialShooter.Player
             if (_canShoot)
             {
                 _mouseClickPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                
                 Vector3 playerPosition = transform.position;
                 Vector2 direction = (playerPosition - _mouseClickPosition).normalized;
+                
+                OnShoot?.Invoke(direction);
                 
                 RaycastHit2D hit = Physics2D.Raycast(playerPosition, -direction, 100, LayerMask.GetMask("Enemy"));
 
                 if (hit.collider != null)
-                {
                     hit.collider.GetComponent<Health>().TakeDamage(1);
-                }
-                
+
                 _rb.AddForce(direction * _recoil, ForceMode2D.Impulse);
 
                 StartCoroutine(ShootCooldown());

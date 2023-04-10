@@ -14,6 +14,11 @@ namespace InertialShooter.Damageable
         {
             _health -= damage;
             OnDamaged?.Invoke();
+            
+            var particles = Instantiate(_dieParticles, transform.position, Quaternion.identity);
+            particles.Play();
+            
+            Destroy(particles.gameObject, particles.main.duration);
 
             if (_health<=0)
             {
@@ -23,10 +28,6 @@ namespace InertialShooter.Damageable
 
         public void Die()
         {
-            var particles = Instantiate(_dieParticles, transform.position, Quaternion.identity);
-            particles.Play();
-            
-            Destroy(particles.gameObject, particles.main.duration);
             Destroy(gameObject);
         }
     }
