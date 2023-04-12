@@ -6577,7 +6577,7 @@ GameObject:
   - component: {fileID: 2112899422}
   - component: {fileID: 2112899423}
   - component: {fileID: 2112899418}
-  - component: {fileID: 2112899417}
+  - component: {fileID: 2112899424}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -6642,8 +6642,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.5965813, g: 1, b: 0.5235849, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1b2b1b43e357f0b479afa6001722de1b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6662,28 +6662,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 2112899411}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: dfa5d1a379880e547a64aaebe9c8f1ab, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &2112899417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112899411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 694655fbcec84a6ea0c394d6001cbb59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sprite: {fileID: 2112899414}
-  _damagedColor: {r: 1, g: 0.4117647, b: 0.4117647, a: 1}
-  _duration: 0.25
+  m_Radius: 0.56
 --- !u!114 &2112899418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6700,6 +6685,7 @@ MonoBehaviour:
   _dieParticles: {fileID: 19889932, guid: 9dbd6578ad45ab34da731a133a3bd5f7, type: 3}
   _rb: {fileID: 2112899420}
   _minimumVelocity: 5
+  _invincibilityTime: 0.5
 --- !u!114 &2112899419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6713,7 +6699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerHealth: {fileID: 2112899418}
-  _indicator: {fileID: 2112899417}
+  _indicator: {fileID: 2112899424}
   _playerShoot: {fileID: 2112899421}
   _tracer: {fileID: 2112899422}
   _dash: {fileID: 2112899423}
@@ -6780,6 +6766,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 2112899420}
   _recoil: 70
+--- !u!114 &2112899424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112899411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58fb485ab7f4422be28bf95fdfaab98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 2112899414}
+  _damagedColor: {r: 1, g: 0.4117647, b: 0.4117647, a: 1}
+  _duration: 0.25
+  _playerDamagedState:
+  - {fileID: 21300000, guid: 1b2b1b43e357f0b479afa6001722de1b, type: 3}
+  - {fileID: 21300000, guid: 41bae8011d8af934794dc80a275ccaf2, type: 3}
+  - {fileID: 21300000, guid: f077552980d8f2a488046fd38d0e5d6a, type: 3}
+  - {fileID: 21300000, guid: 213fe4f60e2dcbf4880975ecc539b8ed, type: 3}
+  - {fileID: 21300000, guid: 47346d2b9bac39442a8dcaf70a45e0f7, type: 3}
 --- !u!1 &2125333263
 GameObject:
   m_ObjectHideFlags: 0

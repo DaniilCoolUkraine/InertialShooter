@@ -17,7 +17,7 @@ namespace InertialShooter.Player
 
         private void OnEnable()
         {
-            _playerHealth.OnDamaged += _indicator.ColorTint;
+            _playerHealth.OnDamaged += _indicator.Indicate;
             
             _playerShoot.OnShoot += _tracer.CreateTrace;
             _playerShoot.OnShoot += _dash.Dash;
@@ -26,7 +26,7 @@ namespace InertialShooter.Player
 
         private void OnDisable()
         {
-            _playerHealth.OnDamaged -= _indicator.ColorTint;
+            _playerHealth.OnDamaged -= _indicator.Indicate;
             
             _playerShoot.OnShoot -= _tracer.CreateTrace;
             _playerShoot.OnShoot -= _dash.Dash;

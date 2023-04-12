@@ -10,6 +10,7 @@ namespace InertialShooter.Player
         public void Dash(Vector2 direction)
         {
             _rb.AddForce(direction * _recoil, ForceMode2D.Impulse);
+            _rb.AddTorque(Random.Range(10, 40));
         }
     }
 }

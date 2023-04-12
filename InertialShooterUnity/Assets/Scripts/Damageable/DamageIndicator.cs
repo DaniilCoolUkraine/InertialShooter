@@ -6,7 +6,7 @@ namespace InertialShooter.Damageable
 {
     public class DamageIndicator : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer _sprite;
+        [SerializeField] protected SpriteRenderer _sprite;
         
         [SerializeField] private Color _damagedColor;
 
@@ -19,7 +19,7 @@ namespace InertialShooter.Damageable
             _defaultColor = _sprite.color;
         }
 
-        public void ColorTint()
+        public virtual void Indicate()
         {
             StartCoroutine(ColorTintCoroutine());
         }
