@@ -18,7 +18,7 @@ namespace InertialShooter.General
             float x = firstVector.x / secondVector.x;
             float y = firstVector.y / secondVector.y;
             float z = firstVector.z / secondVector.z;
-            
+
             return new Vector3(x, y, z);
         }
     }

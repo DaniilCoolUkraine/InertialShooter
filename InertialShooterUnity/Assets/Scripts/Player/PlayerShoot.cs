@@ -11,11 +11,11 @@ namespace InertialShooter.Player
         public event Action<float> OnReload;
 
         [SerializeField] private float _cooldown;
+        [SerializeField] private float _shootDistance = 100;
 
         private bool _canShoot = true;
 
         private Camera _mainCamera;
-
         private Vector3 _mouseClickPosition;
 
         private void Awake()
@@ -38,22 +38,25 @@ namespace InertialShooter.Player
                 _mouseClickPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
                 Vector3 playerPosition = transform.position;
                 Vector2 direction = (playerPosition - _mouseClickPosition).normalized;
-                
-                OnShoot?.Invoke(direction);
-                
-                RaycastHit2D hit = Physics2D.Raycast(playerPosition, -direction, 100, LayerMask.GetMask("Enemy"));
 
-                if (hit.collider != null)
-                    hit.collider.GetComponent<Health>().TakeDamage(1);
+                OnShoot?.Invoke(direction);
+
+                RaycastHit2D[] hits = Physics2D.RaycastAll(playerPosition, -direction, _shootDistance,
+                    LayerMask.GetMask("Enemy"));
+                if (hits.Length > 0)
+                {
+                    foreach (var hit in hits)
+                        hit.collider.GetComponent<Health>().TakeDamage(1);
+                }
 
                 StartCoroutine(ShootCooldown());
             }
         }
-        
+
         private IEnumerator ShootCooldown()
         {
             OnReload?.Invoke(_cooldown);
-            
+
             _canShoot = false;
             yield return new WaitForSeconds(_cooldown);
             _canShoot = true;

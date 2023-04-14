@@ -7,11 +7,11 @@ namespace InertialShooter.Damageable
     public class DamageIndicator : MonoBehaviour
     {
         [SerializeField] protected SpriteRenderer _sprite;
-        
+
         [SerializeField] private Color _damagedColor;
 
         [SerializeField] private float _duration;
-        
+
         private Color _defaultColor;
 
         private void Awake()

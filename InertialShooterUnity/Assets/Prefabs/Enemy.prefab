@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: -7675679373865084808}
+  _enemySpeedBounds: {x: 3, y: 8}
 --- !u!114 &-7226644859655656761
 MonoBehaviour:
   m_ObjectHideFlags: 0

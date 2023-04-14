@@ -2233,8 +2233,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563106206}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13267432, y: 0.041670658, z: -0.013958841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11601,6 +11601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldown: 1
+  _shootDistance: 100
 --- !u!114 &2112899422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11613,8 +11614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a14f595a6b43f2ae61669b28baa5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 2780976413663701984, guid: d7eb7850d3ba4e94c817e0356b7d8513, type: 3}
+  _bullet: {fileID: 2780976413644561918, guid: d7eb7850d3ba4e94c817e0356b7d8513, type: 3}
   _traceLiveTime: 1
+  _forceMultiplier: 500
 --- !u!114 &2112899423
 MonoBehaviour:
   m_ObjectHideFlags: 0

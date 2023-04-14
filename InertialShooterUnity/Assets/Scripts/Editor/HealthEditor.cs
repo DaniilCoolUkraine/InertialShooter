@@ -12,12 +12,12 @@ namespace InertialShooter.Editor
             base.OnInspectorGUI();
 
             Health health = (Health) target;
-            
+
             if (GUILayout.Button("Damage"))
             {
                 health.TakeDamage(1);
             }
-            
+
             if (GUILayout.Button("Die"))
             {
                 health.Die();

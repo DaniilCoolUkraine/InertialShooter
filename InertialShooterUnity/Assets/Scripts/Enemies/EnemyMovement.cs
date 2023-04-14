@@ -6,6 +6,7 @@ namespace InertialShooter.Enemies
     public class EnemyMovement : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent _agent;
+        [SerializeField] private Vector2 _enemySpeedBounds;
 
         private Transform _target;
 
@@ -17,7 +18,7 @@ namespace InertialShooter.Enemies
 
         private void Start()
         {
-            _agent.speed = Random.Range(1, 10);
+            _agent.speed = Random.Range(_enemySpeedBounds.x, _enemySpeedBounds.y);
         }
 
         private void Update()

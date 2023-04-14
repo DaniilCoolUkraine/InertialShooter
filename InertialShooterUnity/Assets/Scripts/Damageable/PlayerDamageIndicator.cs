@@ -7,7 +7,7 @@ namespace InertialShooter.Damageable
         [SerializeField] private Sprite[] _playerDamagedState;
 
         private int _currentState = 0;
-        
+
         public override void Indicate()
         {
             base.Indicate();

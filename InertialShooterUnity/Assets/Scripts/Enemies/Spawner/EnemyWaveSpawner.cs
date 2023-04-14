@@ -8,19 +8,19 @@ namespace InertialShooter.Enemies.Spawner
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private GameObject _enemy;
 
-        [Space(10)]
-        
+        [Space(10)] 
         [SerializeField] private Transform[] _spawningSpots;
 
-        [Space(10)]
+        [Space(10)] 
         
-        [Min(0.1f)] [SerializeField] private float _timeBetweenSpawn = 1;
-        
+        [Min(0.1f)] 
+        [SerializeField] private float _timeBetweenSpawn = 1;
+
         private void Start()
         {
             StartCoroutine(CreateEnemiesOnScene());
         }
-        
+
         private IEnumerator CreateEnemiesOnScene()
         {
             while (true)

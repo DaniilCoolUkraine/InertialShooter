@@ -8,11 +8,11 @@ namespace InertialShooter.Damageable
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private float _minimumVelocity;
 
-        [SerializeField] private float _invincibilityTime = 0.5f;
+        [SerializeField] private float _invincibilityTime;
 
         private bool _canBeDamaged = true;
         private bool _isInvincible = false;
-        
+
         private void OnCollisionEnter2D(Collision2D col)
         {
             if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
@@ -31,10 +31,10 @@ namespace InertialShooter.Damageable
         {
             if (_isInvincible)
                 return false;
-            
+
             if (_rb.velocity.magnitude <= _minimumVelocity)
                 return true;
-            
+
             return false;
         }
 
@@ -42,9 +42,9 @@ namespace InertialShooter.Damageable
         {
             _canBeDamaged = false;
             _isInvincible = true;
-            
+
             yield return new WaitForSeconds(_invincibilityTime);
-            
+
             _isInvincible = false;
             _canBeDamaged = true;
         }

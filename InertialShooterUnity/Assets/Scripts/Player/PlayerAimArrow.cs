@@ -8,12 +8,12 @@ namespace InertialShooter.Player
 
         private Vector3 _mousePosition;
         private Vector3 _aimDirection;
-        
+
         private void Awake()
         {
             _mainCamera = Camera.main;
         }
-        
+
         private void Update()
         {
             _mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
