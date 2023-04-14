@@ -28,11 +28,12 @@ namespace InertialShooter.Player
 
         private void Update()
         {
-            if (_rb.velocity.magnitude<5)
-            {
-                if (_speedParticles.isPlaying)
-                    _speedParticles.Stop();
-            }
+            if (!_speedParticles.isPlaying)
+                return;
+
+            if (_rb.velocity.magnitude < 8)
+                _speedParticles.Stop();
+
         }
 
         private IEnumerator Strech(Vector2 direction)
