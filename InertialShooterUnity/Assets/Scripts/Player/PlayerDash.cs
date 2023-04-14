@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using DG.Tweening;
 using InertialShooter.General;
 using UnityEngine;
@@ -10,14 +11,28 @@ namespace InertialShooter.Player
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private float _recoil;
 
+        [SerializeField] private ParticleSystem _speedParticles;
+
         [SerializeField] private float _duration;
         private Vector3 _startScale;
         
         public void Dash(Vector2 direction)
         {
             _rb.AddForce(direction * _recoil, ForceMode2D.Impulse);
-
+            
             StartCoroutine(Strech(direction));
+
+            if (!_speedParticles.isPlaying)
+                _speedParticles.Play();
+        }
+
+        private void Update()
+        {
+            if (_rb.velocity.magnitude<5)
+            {
+                if (_speedParticles.isPlaying)
+                    _speedParticles.Stop();
+            }
         }
 
         private IEnumerator Strech(Vector2 direction)
