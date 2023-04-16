@@ -1916,7 +1916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -3.2, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4803,7 +4803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387672207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -3.2, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5455,7 +5455,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_Sprite: {fileID: 21300000, guid: 85e3b366cc43a412eaea4abb85da0cd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11743,7 +11743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112899411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -3.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11791,13 +11791,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1b2b1b43e357f0b479afa6001722de1b, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: fa210aa9f898cd640ad7920d71fc36ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.07, y: 1.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -11936,11 +11936,9 @@ MonoBehaviour:
   _damagedColor: {r: 1, g: 0.4117647, b: 0.4117647, a: 1}
   _duration: 0.25
   _playerDamagedState:
-  - {fileID: 21300000, guid: 1b2b1b43e357f0b479afa6001722de1b, type: 3}
-  - {fileID: 21300000, guid: 41bae8011d8af934794dc80a275ccaf2, type: 3}
-  - {fileID: 21300000, guid: f077552980d8f2a488046fd38d0e5d6a, type: 3}
-  - {fileID: 21300000, guid: 213fe4f60e2dcbf4880975ecc539b8ed, type: 3}
-  - {fileID: 21300000, guid: 47346d2b9bac39442a8dcaf70a45e0f7, type: 3}
+  - {fileID: 21300000, guid: ab34dcf5d93add7428c88bbf8ab385bc, type: 3}
+  - {fileID: 21300000, guid: a6fc9629bf8305c40babaf82cc5aac82, type: 3}
+  - {fileID: 21300000, guid: d08598a2370c0c049a3e2c480d8cb93e, type: 3}
 --- !u!1 &2125333263
 GameObject:
   m_ObjectHideFlags: 0

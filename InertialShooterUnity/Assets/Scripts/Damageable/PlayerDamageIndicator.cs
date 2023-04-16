@@ -11,9 +11,10 @@ namespace InertialShooter.Damageable
         public override void Indicate()
         {
             base.Indicate();
-            if (++_currentState < _playerDamagedState.Length)
+            if (_currentState < _playerDamagedState.Length)
             {
                 _sprite.sprite = _playerDamagedState[_currentState];
+                _currentState++;
             }
         }
     }
