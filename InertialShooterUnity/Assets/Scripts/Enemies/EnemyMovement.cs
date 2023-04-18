@@ -29,7 +29,7 @@ namespace InertialShooter.Enemies
             }
         }
 
-        public void Initialize(Transform target)
+        public void SetTarget(Transform target)
         {
             _target = target;
         }

@@ -6,6 +6,7 @@ namespace InertialShooter.Damageable
     public class Health : MonoBehaviour, IDamageable
     {
         public event Action OnDamaged;
+        public event Action OnDie;
 
         [SerializeField] private int _health;
         [SerializeField] private ParticleSystem _dieParticles;
@@ -28,6 +29,7 @@ namespace InertialShooter.Damageable
 
         public void Die()
         {
+            OnDie?.Invoke();
             Destroy(gameObject);
         }
     }

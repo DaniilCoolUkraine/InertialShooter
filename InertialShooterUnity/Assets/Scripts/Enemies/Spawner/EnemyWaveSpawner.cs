@@ -6,6 +6,8 @@ namespace InertialShooter.Enemies.Spawner
     public class EnemyWaveSpawner : MonoBehaviour
     {
         [SerializeField] private Transform _playerTransform;
+        [SerializeField] private EnemyManager _enemyManager;
+        
         [SerializeField] private GameObject _enemy;
 
         [Space(10)] 
@@ -27,10 +29,10 @@ namespace InertialShooter.Enemies.Spawner
             {
                 yield return new WaitForSeconds(_timeBetweenSpawn);
 
-                EnemyMovement enemyMove =
+                EnemyController enemyController =
                     Instantiate(_enemy, _spawningSpots[Random.Range(0, _spawningSpots.Length)].position,
-                        Quaternion.identity).GetComponent<EnemyMovement>();
-                enemyMove.Initialize(_playerTransform);
+                        Quaternion.identity).GetComponent<EnemyController>();
+                enemyController.Initialize(_playerTransform, _enemyManager);
             }
         }
     }
