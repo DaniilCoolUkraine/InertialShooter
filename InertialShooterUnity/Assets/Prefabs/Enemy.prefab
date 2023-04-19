@@ -331,4 +331,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
-  _dieParticles: {fileID: 19815734, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+  _dieParticles: {fileID: 19827778, guid: ec1c5863f61e8ff4a84dbdb8a282a7ac, type: 3}

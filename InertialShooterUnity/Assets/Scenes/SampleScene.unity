@@ -12182,7 +12182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 4
-  _dieParticles: {fileID: 19889932, guid: 9dbd6578ad45ab34da731a133a3bd5f7, type: 3}
+  _dieParticles: {fileID: 19846802, guid: 0a43d6af30ffda6498fb97d7d3202d7e, type: 3}
   _rb: {fileID: 2112899420}
   _minimumVelocity: 5
   _invincibilityTime: 1
