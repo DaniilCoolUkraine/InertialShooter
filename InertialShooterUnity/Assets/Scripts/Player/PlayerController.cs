@@ -1,4 +1,5 @@
 ﻿using InertialShooter.Damageable;
+using InertialShooter.ScriptableObjects;
 using UnityEngine;
 
 namespace InertialShooter.Player
@@ -7,6 +8,7 @@ namespace InertialShooter.Player
     {
         [Header("Health events")] 
         [SerializeField] private PlayerHealth _playerHealth;
+        [SerializeField] private EventSO _onPlayerDie;
 
         [SerializeField] private DamageIndicator _indicator;
 
@@ -20,6 +22,7 @@ namespace InertialShooter.Player
         private void OnEnable()
         {
             _playerHealth.OnDamaged += _indicator.Indicate;
+            _playerHealth.OnDie += _onPlayerDie.Invoke;
 
             _playerShoot.OnShoot += _tracer.CreateTrace;
             _playerShoot.OnShoot += _dash.Dash;
@@ -29,6 +32,7 @@ namespace InertialShooter.Player
         private void OnDisable()
         {
             _playerHealth.OnDamaged -= _indicator.Indicate;
+            _playerHealth.OnDie -= _onPlayerDie.Invoke;
 
             _playerShoot.OnShoot -= _tracer.CreateTrace;
             _playerShoot.OnShoot -= _dash.Dash;
