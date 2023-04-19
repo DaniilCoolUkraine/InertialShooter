@@ -12288,7 +12288,7 @@ MonoBehaviour:
   _playerDamagedState:
   - {fileID: 21300000, guid: ab34dcf5d93add7428c88bbf8ab385bc, type: 3}
   - {fileID: 21300000, guid: a6fc9629bf8305c40babaf82cc5aac82, type: 3}
-  - {fileID: 21300000, guid: d08598a2370c0c049a3e2c480d8cb93e, type: 3}
+  - {fileID: 21300000, guid: 8e8074476b5a937489684967844936d8, type: 3}
 --- !u!1 &2125333263
 GameObject:
   m_ObjectHideFlags: 0
