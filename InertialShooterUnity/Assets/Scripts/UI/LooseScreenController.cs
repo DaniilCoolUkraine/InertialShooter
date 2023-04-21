@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace InertialShooter.UI
 {
-    public class LooseScreenController : MonoBehaviour
+    public class LooseScreenController : TimeSlower
     {
-        [SerializeField] private float _fadeDuration;
-        
         [SerializeField] private GameObject _looseScreen;
         [SerializeField] private SceneUIController _sceneUIController;
 
@@ -28,6 +24,9 @@ namespace InertialShooter.UI
 
         private void OnDisable()
         {
+            _restartButton.onClick.RemoveListener(_sceneUIController.Restart);
+            _quitButton.onClick.RemoveListener(_sceneUIController.Quit);
+
             Time.timeScale = 1;
         }
 
@@ -35,18 +34,6 @@ namespace InertialShooter.UI
         {
             _looseScreen.SetActive(true);
             StartCoroutine(SlowTimeSmoothly());
-        }
-
-        private IEnumerator SlowTimeSmoothly()
-        {
-            float elapsed = 0;
-            while (elapsed < _fadeDuration)
-            {
-                Time.timeScale = Mathf.Lerp(1, 0, elapsed / _fadeDuration);
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-            Time.timeScale = 0;
         }
     }
 }
