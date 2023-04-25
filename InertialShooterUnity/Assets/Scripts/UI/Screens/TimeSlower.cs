@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace InertialShooter.UI
+namespace InertialShooter.UI.Screens
 {
     public class TimeSlower : MonoBehaviour
     {
-        [SerializeField] private float _fadeDuration = 0.2f;
+        [SerializeField] protected float _fadeDuration;
 
         protected IEnumerator SlowTimeSmoothly()
         {

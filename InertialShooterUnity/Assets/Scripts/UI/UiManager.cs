@@ -1,4 +1,5 @@
 ﻿using InertialShooter.ScriptableObjects;
+using InertialShooter.UI.Screens;
 using UnityEngine;
 
 namespace InertialShooter.UI
@@ -16,13 +17,13 @@ namespace InertialShooter.UI
         private void OnEnable()
         {
             _onEnemyKilled.OnInvoked += _enemyCounter.UpdateScore;
-            _onPlayerDie.OnInvoked += _looseScreen.EnableLooseScreen;
+            _onPlayerDie.OnInvoked += _looseScreen.EnableScreen;
         }
 
         private void OnDisable()
         {
             _onEnemyKilled.OnInvoked -= _enemyCounter.UpdateScore;
-            _onPlayerDie.OnInvoked -= _looseScreen.EnableLooseScreen;
+            _onPlayerDie.OnInvoked -= _looseScreen.EnableScreen;
         }
     }
 }

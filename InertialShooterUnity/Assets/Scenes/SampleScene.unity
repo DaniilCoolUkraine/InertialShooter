@@ -1189,10 +1189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeDuration: 0.5
-  _looseScreen: {fileID: 865514276}
+  _screen: {fileID: 865514276}
   _sceneUIController: {fileID: 299177975}
   _restartButton: {fileID: 3806246623198610656}
   _quitButton: {fileID: 1404523209}
+  _overlay: {fileID: 865514278}
 --- !u!114 &299177975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,11 +1219,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeDuration: 0
-  _pauseScreen: {fileID: 2001756994}
+  _screen: {fileID: 2001756994}
   _sceneUIController: {fileID: 299177975}
-  _resumeButton: {fileID: 2048725491}
   _restartButton: {fileID: 1844173978}
   _quitButton: {fileID: 778913800}
+  _resumeButton: {fileID: 2048725491}
 --- !u!1 &314109114
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,7 +3483,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3915180207850135174}
   - {fileID: 1404523208}
@@ -3507,7 +3508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

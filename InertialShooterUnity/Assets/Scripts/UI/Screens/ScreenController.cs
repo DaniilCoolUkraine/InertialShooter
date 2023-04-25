@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace InertialShooter.UI
+namespace InertialShooter.UI.Screens
 {
-    public class LooseScreenController : TimeSlower
+    public class ScreenController : TimeSlower
     {
-        [SerializeField] private GameObject _looseScreen;
-        [SerializeField] private SceneUIController _sceneUIController;
+        [SerializeField] protected GameObject _screen;
+        [SerializeField] protected SceneUIController _sceneUIController;
 
-        [SerializeField] private Button _restartButton;
-        [SerializeField] private Button _quitButton;
+        [SerializeField] protected Button _restartButton;
+        [SerializeField] protected Button _quitButton;
 
         private void Start()
         {
-            _looseScreen.SetActive(false);
+            _screen.SetActive(false);
         }
 
         private void OnEnable()
@@ -30,9 +30,9 @@ namespace InertialShooter.UI
             Time.timeScale = 1;
         }
 
-        public void EnableLooseScreen()
+        public virtual void EnableScreen()
         {
-            _looseScreen.SetActive(true);
+            _screen.SetActive(true);
             StartCoroutine(SlowTimeSmoothly());
         }
     }
