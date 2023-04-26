@@ -20,6 +20,7 @@ namespace InertialShooter.Player
         
         [SerializeField] private PlayerDash _dash;
         [SerializeField] private PlayerReloadIndicator _reloadIndicator;
+        [SerializeField] private ScreenShake _screenShake;
 
         private void OnEnable()
         {
@@ -32,6 +33,8 @@ namespace InertialShooter.Player
             _playerHealth.OnDie += _onPlayerDie.Invoke;
             
             _playerShoot.WeaponChip.OnShoot += _dash.Dash;
+            _playerShoot.WeaponChip.OnShoot += _screenShake.Shake;
+            
             _playerShoot.WeaponChip.OnReload += _reloadIndicator.OnReload;
         }
 
@@ -41,6 +44,8 @@ namespace InertialShooter.Player
             _playerHealth.OnDie -= _onPlayerDie.Invoke;
             
             _playerShoot.WeaponChip.OnShoot -= _dash.Dash;
+            _playerShoot.WeaponChip.OnShoot -= _screenShake.Shake;
+
             _playerShoot.WeaponChip.OnReload -= _reloadIndicator.OnReload;
         }
     }
