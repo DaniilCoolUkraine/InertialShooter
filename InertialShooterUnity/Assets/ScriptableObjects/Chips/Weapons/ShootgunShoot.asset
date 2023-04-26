@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8961eba0dde3406ab6043dc0ae0c22c6, type: 3}
   m_Name: ShootgunShoot
   m_EditorClassIdentifier: 
+  _shootSize: 4

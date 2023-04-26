@@ -17,8 +17,7 @@ namespace InertialShooter.Player
         [Header("Shoot events")] 
         [SerializeField] private WeaponChip _weaponChip;
         [SerializeField] private PlayerShoot _playerShoot;
-
-        [SerializeField] private BulletTracer _tracer;
+        
         [SerializeField] private PlayerDash _dash;
         [SerializeField] private PlayerReloadIndicator _reloadIndicator;
 
@@ -31,8 +30,7 @@ namespace InertialShooter.Player
             
             _playerHealth.OnDamaged += _indicator.Indicate;
             _playerHealth.OnDie += _onPlayerDie.Invoke;
-
-            _playerShoot.WeaponChip.OnShoot += _tracer.CreateTrace;
+            
             _playerShoot.WeaponChip.OnShoot += _dash.Dash;
             _playerShoot.WeaponChip.OnReload += _reloadIndicator.OnReload;
         }
@@ -41,8 +39,7 @@ namespace InertialShooter.Player
         {
             _playerHealth.OnDamaged -= _indicator.Indicate;
             _playerHealth.OnDie -= _onPlayerDie.Invoke;
-
-            _playerShoot.WeaponChip.OnShoot -= _tracer.CreateTrace;
+            
             _playerShoot.WeaponChip.OnShoot -= _dash.Dash;
             _playerShoot.WeaponChip.OnReload -= _reloadIndicator.OnReload;
         }

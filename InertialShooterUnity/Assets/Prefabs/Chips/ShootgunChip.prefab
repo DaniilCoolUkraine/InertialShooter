@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2973796731615043896}
+  - component: {fileID: -7347708331592369858}
   - component: {fileID: 2973796731615043895}
+  - component: {fileID: 2106911003842855085}
   m_Layer: 0
   m_Name: ShootgunChip
   m_TagString: Untagged
@@ -32,6 +34,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7347708331592369858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973796731615043894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56bb8d0af9234698b31c6e7dbada6370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponChip: {fileID: 2973796731615043895}
+  _bulletTracer: {fileID: 2106911003842855085}
 --- !u!114 &2973796731615043895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,3 +61,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chipData: {fileID: 11400000, guid: 85a1b441f496f544ca516a4906a3fbd2, type: 2}
+--- !u!114 &2106911003842855085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973796731615043894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a14f595a6b43f2ae61669b28baa5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 726169882815338283, guid: ada1bc613ba2bd241a8528e527686281, type: 3}
+  _traceLiveTime: 0.3
+  _forceMultiplier: 400

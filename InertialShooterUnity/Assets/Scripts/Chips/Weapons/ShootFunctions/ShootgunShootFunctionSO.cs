@@ -11,7 +11,7 @@ namespace InertialShooter.Chips.Weapons.ShootFunctions
         {
             RaycastHit2D[] hits = Physics2D.BoxCastAll(position, new Vector2(_shootSize, _shootSize), 0, -direction, shootDistance,
                 LayerMask.GetMask(shootLayers));
-            
+
             if (hits.Length > 0)
             {
                 foreach (var hit in hits)

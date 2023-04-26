@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2973796731615043896}
+  - component: {fileID: -3245590876564988532}
   - component: {fileID: 2973796731615043895}
+  - component: {fileID: -2096962102663824684}
   m_Layer: 0
   m_Name: RailgunChip
   m_TagString: Untagged
@@ -32,6 +34,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3245590876564988532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973796731615043894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56bb8d0af9234698b31c6e7dbada6370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponChip: {fileID: 2973796731615043895}
+  _bulletTracer: {fileID: -2096962102663824684}
 --- !u!114 &2973796731615043895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,3 +61,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chipData: {fileID: 11400000, guid: a6fdac4f140ada8408f02339b48629bf, type: 2}
+--- !u!114 &-2096962102663824684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973796731615043894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a14f595a6b43f2ae61669b28baa5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 2780976413644561918, guid: d7eb7850d3ba4e94c817e0356b7d8513, type: 3}
+  _traceLiveTime: 1
+  _forceMultiplier: 500

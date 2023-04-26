@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShootGun
   m_EditorClassIdentifier: 
   _cooldown: 1
-  _recoil: 70
+  _recoil: 80
   _shootDistance: 10
   _shootLayers:
   - Enemy
