@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace InertialShooter.Player
+namespace InertialShooter.Chips.Weapons
 {
     public class BulletTracer : MonoBehaviour
     {

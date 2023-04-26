@@ -13578,7 +13578,7 @@ MonoBehaviour:
   _playerHealth: {fileID: 2112899418}
   _onPlayerDie: {fileID: 11400000, guid: 4b7db0ca700088a43b40d14c644c6090, type: 2}
   _indicator: {fileID: 2112899424}
-  _weaponChip: {fileID: 2973796731615043895, guid: e10d5b869039e29439b02eff39835d1e, type: 3}
+  _weaponChip: {fileID: 2973796731615043895, guid: c486c0d3467174c46bd939a26bf579a7, type: 3}
   _playerShoot: {fileID: 2112899421}
   _tracer: {fileID: 2112899422}
   _dash: {fileID: 2112899423}
@@ -13645,7 +13645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 2112899420}
   _speedParticles: {fileID: 1675479358}
-  _duration: 0.1
+  _strechDuration: 0.1
 --- !u!114 &2112899424
 MonoBehaviour:
   m_ObjectHideFlags: 0

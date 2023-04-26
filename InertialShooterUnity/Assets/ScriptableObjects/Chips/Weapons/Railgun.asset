@@ -18,3 +18,4 @@ MonoBehaviour:
   _shootLayers:
   - Enemy
   - Obstacle
+  _shootFunction: {fileID: 11400000, guid: 86e75120fcf40e24dbc1511df7130bb3, type: 2}

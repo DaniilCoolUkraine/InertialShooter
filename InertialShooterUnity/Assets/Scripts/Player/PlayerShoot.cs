@@ -1,4 +1,5 @@
 ﻿using InertialShooter.Chips;
+using InertialShooter.Chips.Weapons;
 using UnityEngine;
 
 namespace InertialShooter.Player

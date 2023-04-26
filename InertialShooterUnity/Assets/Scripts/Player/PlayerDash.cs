@@ -11,7 +11,7 @@ namespace InertialShooter.Player
 
         [SerializeField] private ParticleSystem _speedParticles;
 
-        [SerializeField] private float _duration;
+        [SerializeField] private float _strechDuration;
         
         private Vector3 _startScale;
         private float _recoil;
@@ -49,9 +49,9 @@ namespace InertialShooter.Player
                 HelperFunctions.VectorDivision(absoluteDirection, absoluteDirection + new Vector3(0.03f, 0.03f, 0.03f))
                     .normalized;
 
-            transform.DOScale(dashScale, _duration);
-            yield return new WaitForSeconds(_duration);
-            transform.DOScale(_startScale, _duration);
+            transform.DOScale(dashScale, _strechDuration);
+            yield return new WaitForSeconds(_strechDuration);
+            transform.DOScale(_startScale, _strechDuration);
         }
     }
 }
