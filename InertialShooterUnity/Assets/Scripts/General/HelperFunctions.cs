@@ -2,7 +2,7 @@
 
 namespace InertialShooter.General
 {
-    public class HelperFunctions
+    public static class HelperFunctions
     {
         public static Vector3 VectorAbs(Vector3 vector)
         {

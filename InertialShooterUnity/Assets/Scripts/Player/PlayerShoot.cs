@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections;
-using InertialShooter.Damageable;
+﻿using InertialShooter.Chips;
 using UnityEngine;
 
 namespace InertialShooter.Player
 {
     public class PlayerShoot : MonoBehaviour
     {
-        public event Action<Vector2> OnShoot;
-        public event Action<float> OnReload;
-
-        [SerializeField] private float _cooldown;
-        [SerializeField] private float _shootDistance = 100;
-
-        private bool _canShoot = true;
+        public WeaponChip WeaponChip { get; private set; }
 
         private Camera _mainCamera;
         private Vector3 _mouseClickPosition;
@@ -22,44 +14,26 @@ namespace InertialShooter.Player
         {
             _mainCamera = Camera.main;
         }
-
+        
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Fire();
+                Shoot();
             }
         }
 
-        private void Fire()
+        public void SetWeaponChip(WeaponChip weaponChip)
         {
-            if (_canShoot)
-            {
-                _mouseClickPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 playerPosition = transform.position;
-                Vector2 direction = (playerPosition - _mouseClickPosition).normalized;
-
-                OnShoot?.Invoke(direction);
-
-                RaycastHit2D[] hits = Physics2D.RaycastAll(playerPosition, -direction, _shootDistance,
-                    LayerMask.GetMask("Enemy"));
-                if (hits.Length > 0)
-                {
-                    foreach (var hit in hits)
-                        hit.collider.GetComponent<Health>().TakeDamage(1);
-                }
-
-                StartCoroutine(ShootCooldown());
-            }
+            WeaponChip = weaponChip;
         }
-
-        private IEnumerator ShootCooldown()
+        
+        private void Shoot()
         {
-            OnReload?.Invoke(_cooldown);
+            _mouseClickPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = (transform.position - _mouseClickPosition).normalized;
 
-            _canShoot = false;
-            yield return new WaitForSeconds(_cooldown);
-            _canShoot = true;
+            WeaponChip.Shoot(direction);
         }
     }
 }

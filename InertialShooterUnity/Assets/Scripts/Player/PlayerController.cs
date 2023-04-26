@@ -1,4 +1,5 @@
-﻿using InertialShooter.Damageable;
+﻿using InertialShooter.Chips;
+using InertialShooter.Damageable;
 using InertialShooter.ScriptableObjects;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace InertialShooter.Player
         [SerializeField] private DamageIndicator _indicator;
 
         [Header("Shoot events")] 
+        [SerializeField] private WeaponChip _weaponChip;
         [SerializeField] private PlayerShoot _playerShoot;
 
         [SerializeField] private BulletTracer _tracer;
@@ -21,12 +23,17 @@ namespace InertialShooter.Player
 
         private void OnEnable()
         {
+            WeaponChip weaponChip = Instantiate(_weaponChip, transform);
+            
+            _playerShoot.SetWeaponChip(weaponChip);
+            _dash.SetRecoil(weaponChip.WeaponChipData.Recoil);
+            
             _playerHealth.OnDamaged += _indicator.Indicate;
             _playerHealth.OnDie += _onPlayerDie.Invoke;
 
-            _playerShoot.OnShoot += _tracer.CreateTrace;
-            _playerShoot.OnShoot += _dash.Dash;
-            _playerShoot.OnReload += _reloadIndicator.OnReload;
+            _playerShoot.WeaponChip.OnShoot += _tracer.CreateTrace;
+            _playerShoot.WeaponChip.OnShoot += _dash.Dash;
+            _playerShoot.WeaponChip.OnReload += _reloadIndicator.OnReload;
         }
 
         private void OnDisable()
@@ -34,9 +41,9 @@ namespace InertialShooter.Player
             _playerHealth.OnDamaged -= _indicator.Indicate;
             _playerHealth.OnDie -= _onPlayerDie.Invoke;
 
-            _playerShoot.OnShoot -= _tracer.CreateTrace;
-            _playerShoot.OnShoot -= _dash.Dash;
-            _playerShoot.OnReload -= _reloadIndicator.OnReload;
+            _playerShoot.WeaponChip.OnShoot -= _tracer.CreateTrace;
+            _playerShoot.WeaponChip.OnShoot -= _dash.Dash;
+            _playerShoot.WeaponChip.OnReload -= _reloadIndicator.OnReload;
         }
     }
 }

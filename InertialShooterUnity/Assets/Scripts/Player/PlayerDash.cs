@@ -8,13 +8,14 @@ namespace InertialShooter.Player
     public class PlayerDash : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D _rb;
-        [SerializeField] private float _recoil;
 
         [SerializeField] private ParticleSystem _speedParticles;
 
         [SerializeField] private float _duration;
+        
         private Vector3 _startScale;
-
+        private float _recoil;
+        
         public void Dash(Vector2 direction)
         {
             _rb.AddForce(direction * _recoil, ForceMode2D.Impulse);
@@ -32,6 +33,11 @@ namespace InertialShooter.Player
 
             if (_rb.velocity.magnitude < 8)
                 _speedParticles.Stop();
+        }
+
+        public void SetRecoil(float recoil)
+        {
+            _recoil = recoil;
         }
 
         private IEnumerator Strech(Vector2 direction)
