@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace InertialShooter.UI.Screens
@@ -10,19 +11,21 @@ namespace InertialShooter.UI.Screens
 
         [SerializeField] protected Button _restartButton;
         [SerializeField] protected Button _quitButton;
+        
+        [SerializeField] protected Image _overlay;
 
         private void Start()
         {
             _screen.SetActive(false);
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             _restartButton.onClick.AddListener(_sceneUIController.Restart);
             _quitButton.onClick.AddListener(_sceneUIController.Quit);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             _restartButton.onClick.RemoveListener(_sceneUIController.Restart);
             _quitButton.onClick.RemoveListener(_sceneUIController.Quit);
@@ -33,6 +36,8 @@ namespace InertialShooter.UI.Screens
         public virtual void EnableScreen()
         {
             _screen.SetActive(true);
+            _overlay.DOFade(.5f, _fadeDuration);
+            
             StartCoroutine(SlowTimeSmoothly());
         }
     }

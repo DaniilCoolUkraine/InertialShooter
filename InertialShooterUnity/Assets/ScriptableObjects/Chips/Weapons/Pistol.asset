@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca464b913a06493b80a5ebfed132d81d, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  _cooldown: 1
+  _cooldown: 0.5
   _recoil: 50
-  _shootDistance: 100
+  _shootDistance: 50
   _shootLayers:
   - Enemy
   _shootFunction: {fileID: 11400000, guid: 68b45c3d5eda3404dadab3f15d8852cd, type: 2}

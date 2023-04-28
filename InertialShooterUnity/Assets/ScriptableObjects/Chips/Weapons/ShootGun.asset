@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca464b913a06493b80a5ebfed132d81d, type: 3}
   m_Name: ShootGun
   m_EditorClassIdentifier: 
-  _cooldown: 1
-  _recoil: 80
-  _shootDistance: 10
+  _cooldown: 1.5
+  _recoil: 75
+  _shootDistance: 30
   _shootLayers:
   - Enemy
   - Obstacle

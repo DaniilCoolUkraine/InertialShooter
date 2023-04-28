@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace InertialShooter.UI.Screens
@@ -9,16 +10,16 @@ namespace InertialShooter.UI.Screens
 
         private bool _isPaused = false;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             _resumeButton.onClick.AddListener(Resume);
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             _resumeButton.onClick.RemoveListener(Resume);
-
-            Time.timeScale = 1;
         }
         
         private void Update()
@@ -28,21 +29,21 @@ namespace InertialShooter.UI.Screens
                 if (_isPaused)
                     Resume();
                 else
-                    Pause();
+                    EnableScreen();
             }
         }
 
-        private void Pause()
+        public override void EnableScreen()
         {
+            base.EnableScreen();
+
             _isPaused = true;
-            _screen.SetActive(true);
-            
-            StartCoroutine(SlowTimeSmoothly());
         }
 
         private void Resume()
         {
             _isPaused = false;
+            _overlay.DOFade(0, _fadeDuration);
             _screen.SetActive(false);
             
             Time.timeScale = 1;

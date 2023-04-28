@@ -7,9 +7,17 @@ namespace InertialShooter.Chips.Weapons.ShootFunctions
     public class ShootgunShootFunctionSO : ShootFunctionSO
     {
         [SerializeField] private float _shootSize;
+
+        private Vector2 _size;
+        
+        private void Awake()
+        {
+            _size  = new Vector2(_shootSize, _shootSize);
+        }
+        
         public override void Shoot(Vector3 position, Vector3 direction, float shootDistance, string[] shootLayers)
         {
-            RaycastHit2D[] hits = Physics2D.BoxCastAll(position, new Vector2(_shootSize, _shootSize), 0, -direction, shootDistance,
+            RaycastHit2D[] hits = Physics2D.BoxCastAll(position, _size, 0, -direction, shootDistance,
                 LayerMask.GetMask(shootLayers));
 
             if (hits.Length > 0)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Railgun
   m_EditorClassIdentifier: 
   _cooldown: 1
-  _recoil: 70
+  _recoil: 55
   _shootDistance: 100
   _shootLayers:
   - Enemy
