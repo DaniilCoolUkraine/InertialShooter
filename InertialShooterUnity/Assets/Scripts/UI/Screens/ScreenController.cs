@@ -22,13 +22,13 @@ namespace InertialShooter.UI.Screens
         protected virtual void OnEnable()
         {
             _restartButton.onClick.AddListener(_sceneUIController.Restart);
-            _quitButton.onClick.AddListener(_sceneUIController.Quit);
+            _quitButton.onClick.AddListener(_sceneUIController.QuitToMainMenu);
         }
 
         protected virtual void OnDisable()
         {
             _restartButton.onClick.RemoveListener(_sceneUIController.Restart);
-            _quitButton.onClick.RemoveListener(_sceneUIController.Quit);
+            _quitButton.onClick.RemoveListener(_sceneUIController.QuitToMainMenu);
 
             Time.timeScale = 1;
         }

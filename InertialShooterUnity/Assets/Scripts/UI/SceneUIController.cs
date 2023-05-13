@@ -10,10 +10,14 @@ namespace InertialShooter.UI
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        public void Quit()
+        public void QuitToMainMenu()
         {
-            Debug.Log("quit");
-            Application.Quit();
+            LoadScene("MainMenuScene");
+        }
+        
+        private void LoadScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
